@@ -5,6 +5,8 @@
 # 2. Then add the paths of the files to the below files array.
 # 3. Modify your start script in package.json to "start": "bash context_build.sh && ng serve"
 
+## For undoing the changes after prod build, run "bash context_build.sh true && ng build"
+
 FILES=(
     "src/index.html"
     "src/styles.scss"

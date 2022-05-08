@@ -42,7 +42,10 @@ log() {
 
 # check if a command/package exists
 command_exists() {
-    command -v "$@" >/dev/null 2>&1
+    if ! command -v "$@" >/dev/null 2>&1; then
+        log ERR "Failed to install $@."
+        exit 1
+    fi
 }
 
 #check node version
@@ -55,7 +58,6 @@ check_node_ver() {
         false
     fi
 }
-
 
 # displays a progress bar to imitate loading
 display_progress() {
